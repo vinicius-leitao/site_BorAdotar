@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Protetor Pet</title>
+        
+        <meta charset="utf-8">
+        <meta name="author" content="Vinícius Leitão Santos">
+        <meta name="description" content="Home page do site WolfByte">
+        <meta name="keywords" content="adotar, lar, animal. cachorro, gato, doar">
+
+
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../Vinícius - Arquivos HTML, CSS e JavaScript/normalize.css">
+        <link rel="stylesheet" href="../Vinícius - Arquivos HTML, CSS e JavaScript/HomePage.css">
+    </head>
+
+    <body>
+        <header class="index-header">
+            <div class="index-header-div">
+                <nav class="header-div-nav">
+                    <a href="HomePage.html"><img src="../Vinícius - Arquivos HTML, CSS e JavaScript/Logomarca.png" alt="Logomarca do site" class="logomarca"></a>
+                    <ul>
+                        
+                        <li><a href="#" class="div-nav-link">Doe um amigo</a></li>
+                        <li><a href="#" class="div-nav-link">Por que adotar?</a></li>
+                        <li><a href="#" class="div-nav-link">Sobre nós</a></li>
+                        <li><a href="#" class="div-nav-link">Parceiros adotados</a></li>
+                        <li><a href="#" class="div-nav-link div-nav-link-login">Entrar</a></li>
+                        <li><a href="#" class="div-nav-link div-nav-link-register">Criar uma conta</a></li>
+                    </ul> 
+                </nav>
+            </div>
+            <img src="3383587.jpg" alt="Gatinho dormindo apoiado no ombro de sua dona que está de costas" class="index-header-img">
+
+        </header>
+        <main>
+            <div class="main-div-search">
+                <h1>Encontre seu novo amigo</h1>
+                <form action="buscar-pet" method="GET" name="buscar-pet" class="div-search-form-row">
+                    <div class="label-sel-col1">
+                    <label for="especie">Espécie:</label>
+                    <select name="especie" id="especie" required>
+                        <option value="none" selected>Selecione o animalzinho que você deseja</option>
+                        <option value="qqr">Qualquer</option>
+                        <option value="gato">Gato</option>
+                        <option value="cachorro">cachorro</option>
+                    </select>
+                
+                    <label for="porte">Porte:</label>
+                    <select name="porte" id="porte" required>
+                        <option value="qqr" selected>Qualquer</option>
+                        <option value="p">Pequeno</option> 
+                        <option value="m">Médio</option>
+                        <option value="g">Grande</option> 
+                    </select>
+                
+                    
+                    <label for="estado">Estado:</label>
+                    <select name="estado" id="estado" required>
+                        <option value="none" selected>Selecione o seu estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </div>
+                <div class="label-sel-col2">
+                    <label for="cidade">Cidade:</label>
+                    <select name="cidade" id="cidade" disabled></select>
+                
+                
+                    <label for="bairro">Bairro:</label>
+                    <select name="bairro" id="bairro" disabled></select>
+                
+
+                    <label for="ciente" id="ciente"><input type="checkbox" name="ciente" required >Estou ciente de que não posso abandonar, mau-tratar, agredir ou abusar de qualquer animal, de acordo com a lei pipipipopopo.</label>
+                </div>
+                    
+
+                    <input type="submit" value="Encontrar" id="encontrar">
+                
+                </form>
+            </div>
+            <section class="main-section-content">
+                <h1>Por que adotar?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla facilis, iure porro, sunt veniam vero fuga, quaerat eum ea voluptatibus eius ipsam recusandae minus illo? Asperiores ab et ut quia! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla facilis, iure porro, sunt veniam vero fuga, quaerat eum ea voluptatibus eius ipsam recusandae minus illo? Asperiores ab et ut quia! </p>
+            </section>
+        </main>
+        <footer>
+            <a href="https://br.freepik.com/fotos-vetores-gratis/mulher">Mulher foto criado por freepik - br.freepik.com</a>
+        </footer>
+    </body>
+</html>
