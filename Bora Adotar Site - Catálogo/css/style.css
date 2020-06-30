@@ -152,6 +152,7 @@ nav a:hover{
     font-size: 1.5em;
     border-radius: 5px;
     outline: none;
+
 }
 
 .form-pet button{
@@ -459,4 +460,65 @@ footer h2{
     line-height: 200px;
     font-size: 1.5em;
     color: #fff;
+}
+
+.cadastro{
+    height: 100vh;
+    width: 800px;
+    margin-bottom: 50px;
+}
+.cadastro h2{
+    font-size: 4.0em;
+    padding: 150px 0 30px;
+    text-align: center;
+    color: #8C2E73;
+    font-weight: bold;
+}
+
+.form-cadastro{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.form-cadastro input, .form-cadastro select {
+    width: 100%;
+    height: 45px;
+    border: solid 0.7px #d3d0d0;
+    border-radius: 10px;
+    outline: none;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+
+.form-cadastro label{
+    font-size: 1.8em;
+    line-height: 35px;
+}
+
+.email{ 
+    grid-column: span 2;
+}
+
+.form-cadastro button {
+    grid-column: span 2;
+    background-color: #8C2E73;
+    height: 50px;
+    width: 300px;
+    font-size: 2.0em;
+    color: #fff;
+    justify-self: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: all 0.5s;
+}
+
+.form-cadastro button:hover{
+
+    background-color: rgb(105, 34, 86);
+
+
 }
