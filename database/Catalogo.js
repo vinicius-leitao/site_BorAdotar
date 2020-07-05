@@ -2,19 +2,23 @@ const sequelize = require("sequelize")
 const connection = require("./database")
 
 const Catalogo = connection.define('catalogo', {
-    name: {
+    nome: {
         type: sequelize.STRING, 
         allowNull: false
-    }, description: {
+    }, descricao: {
         type: sequelize.TEXT, 
         allowNull: false
-    }, personality: {
+    }, personalidade: {
         type: sequelize.STRING, 
         allowNull: true
-    }, age: {
+    }, idade: {
         type: sequelize.INTEGER, 
+        allowNull: true
+    }, foto: {
+        type: sequelize.BLOB, 
         allowNull: true
     }
 })
+
 
 module.exports = Catalogo
