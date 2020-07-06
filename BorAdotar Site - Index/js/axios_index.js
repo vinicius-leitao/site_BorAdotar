@@ -9,6 +9,7 @@ axios.get("http://localhost:8000/exibir").then(response => {
         let nome = document.createElement("a")
         let regiao = document.createElement("p")
         
+        //inserção das variáveis nos elementos
         nome.innerHTML = animal.nome
 
         //setagem de atributos para carrgar o estilo do css
