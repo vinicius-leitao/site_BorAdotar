@@ -6,9 +6,6 @@ const User = connection.define('user', {
     nome: {
         type: sequelize.STRING,
         allowNull: false
-    }, sobrenome: {
-        type: sequelize.STRING,
-        allowNull: false
     }, email: {
         type: sequelize.TEXT,
         allowNull: false
@@ -17,6 +14,9 @@ const User = connection.define('user', {
         allowNull: false
     }, dataDeNascimento: {
         type: sequelize.DATE, 
+        allowNull: false
+    }, genero: {
+        type: sequelize.TEXT, 
         allowNull: false
     }, cep: {
         type: sequelize.JSON,
