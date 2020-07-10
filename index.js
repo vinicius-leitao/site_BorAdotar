@@ -3,21 +3,24 @@ const express = require("express")
 const app = express()
 const bodyparser = require("body-parser")
 const path = require("path")
+const multer = require("multer")
 
 //importação das rotas
-const userController = require("./user/userController")
+const userController = require("./controllers/userController")
 const Catalogo = require("./database/Catalogo")
 
 //configuração body-parser - ajuda a pegar parametros na requisição
 app.use(bodyparser.urlencoded({extended: false}))
 app.use(bodyparser.json())
 
+//configuração multer - salvar imagens
+//const upload = multer(dest: )
+
 //talvez seja necessário usar flash
 
 //configurações de rotas
 app.use(express.static("public"))
 app.use("/", userController)
-
 
 //rotas
 app.get("/", (req, res) => {
@@ -35,9 +38,12 @@ app.get("/cadastro", (req, res) => {
 app.get("/suporte", (req, res) => {
     res.sendFile(path.resolve(__dirname, "public/suporte/suporte.html"))
 })
-
-app.get("/catalogo", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "public/catalogo/catalogo.html"), {catalogo: Catalogo})
+//acertar pra não selecionar cidade, porte ou raça no form
+app.get("/catalogo/:pagina?", (req, res) => {
+    if(req.params.pagina == 1){
+        res.sendFile(path.resolve(__dirname, "public/catalogo/catalogo.html"))
+    }
+    res.sendFile(path.resolve(__dirname, "public/catalogo/catalogo.html"))
 })
 
 app.get("/error", (req, res) => {
@@ -45,24 +51,46 @@ app.get("/error", (req, res) => {
 })
 
 app.get("/teste", (req, res) => {
-    Catalogo.findAll({raw: true}).then(element => {
-        res.send(element)
+    res.sendFile(path.resolve(__dirname, "public/teste/teste.html"))
+})
+
+//conferir status code depois
+app.get("/exibir_index", (req, res) => {
+    Catalogo.findAll({
+        raw: true, 
+        limit: 4
+    }).then(element => {
+        res.json(element)
+    }).catch(err => {
+        console.log(err)
+        res.statusCode = 400
     })
 })
 
+app.get("/exibir_catalogo", (req, res) => {
+    Catalogo.findAll({
+        raw: true 
+    }).then(element =>{
+        res.json(element)
+    })
+})
 
 //só to fazendo uns testes com a exibição na index
 app.post("/teste", (req, res) => {
     let nome = req.body.nome
     let descricao = req.body.descricao
+    let foto = req.body.img
     Catalogo.create({
         nome: nome,
-        descricao: descricao
+        descricao: descricao,
+        foto: foto
     }).then(() => {
         res.redirect("/")
-    }).catch(err => 
+        res.statusCode = 200
+    }).catch(err => {
         console.log(err)
-    )
+        res.statusCode = 401
+    })
 })
 
 app.listen(8000, () => {
