@@ -3,7 +3,10 @@ const express = require('express')
 const router = express.Router()
 const Catalogo = require("../database/Catalogo")
 
+
 //rotas
+
+//conferir status code depois
 router.get("/user", (req, res) => {
     res.sendFile()
 })
