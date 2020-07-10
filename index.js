@@ -24,7 +24,7 @@ app.use("/", userController)
 
 //rotas
 app.get("/", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "public/index/index.html"))
+    res.sendFile(path.resolve(__dirname, "public/index/index.html"))
 })
 
 app.get("/login", (req, res) => {
@@ -38,7 +38,9 @@ app.get("/cadastro", (req, res) => {
 app.get("/suporte", (req, res) => {
     res.sendFile(path.resolve(__dirname, "public/suporte/suporte.html"))
 })
+
 //acertar pra não selecionar cidade, porte ou raça no form
+
 app.get("/catalogo/:pagina?", (req, res) => {
     if(req.params.pagina == 1){
         res.sendFile(path.resolve(__dirname, "public/catalogo/catalogo.html"))
@@ -91,6 +93,29 @@ app.post("/teste", (req, res) => {
         console.log(err)
         res.statusCode = 401
     })
+})
+
+//terminar else quando ler a documentação do flash
+app.post("/cadastro", (req, res) => {
+    let [name, lastname, email, password, confirmpassword, data, sex, cep, numberhouse] = req.body
+        if(password === confirmpassword){
+            let fullname = name + " " + lastname
+            User.create({
+                nome: fullname,
+                email: email,
+                senha: password,
+                dataDeNascimento: data,
+                genero: sex, 
+                cep: cep,
+                numero: numberhouse
+        }).then(() => {
+            res.redirect("/user/me")
+        }).catch(err => {
+            console.log(err)
+        })
+    } else {
+
+    }
 })
 
 app.listen(8000, () => {
