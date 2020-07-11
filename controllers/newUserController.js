@@ -2,7 +2,7 @@
 const User = require("../database/User")
 
 
-//ajeitar status code e colocar exçessões e confirmar dados aqui
+//ajeitar status code e colocar exceções e confirmar dados aqui
 class NewUser{
 
     static create(req, res){   
