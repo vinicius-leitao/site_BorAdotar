@@ -1,5 +1,5 @@
-axios.get("http://localhost:8000/exibir_index").then(response => {
-    let catalogo = response.data
+axios.get("http://localhost:8000").then(response => {
+    let catalogo = JSON.parse(response.headers.catalog_index)
     let list = document.getElementById("cards")
     catalogo.forEach(animal => {
         //criação de elementos pra igualar a o modelo anterior
@@ -10,7 +10,7 @@ axios.get("http://localhost:8000/exibir_index").then(response => {
         let regiao = document.createElement("p")
         
         //inserção das variáveis nos elementos
-        nome.innerHTML = animal.nome
+        nome.innerHTML = animal.name
 
         //setagem de atributos para carrgar o estilo do css
         cards.setAttribute("class", "cards")
