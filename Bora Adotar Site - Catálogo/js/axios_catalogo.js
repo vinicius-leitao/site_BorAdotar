@@ -1,7 +1,7 @@
 axios.get("http://localhost:8000/catalogo").then(response => {
     let catalog = JSON.parse(response.headers.catalog)
     let list = document.getElementById("catalogo-container")
-    catalog.forEach(animal => {
+    catalog.rows.forEach(animal => {
         //criação de elementos
         let box = document.createElement("article")
         let img = document.createElement("img")
@@ -33,5 +33,16 @@ axios.get("http://localhost:8000/catalogo").then(response => {
         box.appendChild(porte)
         box.appendChild(genero)
         list.appendChild(box)
-    })    
+    })
+
+    let numeracao = 1
+    let secao = document.getElementById("catalogo-container")
+    let menu = document.createElement("ul")
+    while("true" == response.headers.nextPage){
+        let opcoes = document.createElement("li")
+        opcoes.innerHTML == numeracao
+        menu.appendChild(opcoes)
+        numeracao ++
+    }
+    secao.appendChild(menu)
 })
