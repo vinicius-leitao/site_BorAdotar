@@ -1,7 +1,7 @@
-axios.get("http://localhost:8000/exibir_catalogo").then(response => {
-    let catalogo = response.data
+axios.get("http://localhost:8000/catalogo").then(response => {
+    let catalog = JSON.parse(response.headers.catalog)
     let list = document.getElementById("catalogo-container")
-    catalogo.forEach(animal => {
+    catalog.forEach(animal => {
         //criação de elementos
         let box = document.createElement("article")
         let img = document.createElement("img")
@@ -14,11 +14,10 @@ axios.get("http://localhost:8000/exibir_catalogo").then(response => {
         let genero = document.createElement("p")
 
         //inserção das variáveis nos elementos
-        nome.innerHTML = animal.nome
-
+        nome.innerHTML = animal.name
 
         //setagem de atributos para carregar o estilo do css
-        box.setAttribute("class", "box-pet")
+        box.classList.add("box-pet")
         regiao.setAttribute("class","regiao-a")
         porte.setAttribute("class", "clear")
         genero.setAttribute("class", "active-border")
@@ -34,9 +33,5 @@ axios.get("http://localhost:8000/exibir_catalogo").then(response => {
         box.appendChild(porte)
         box.appendChild(genero)
         list.appendChild(box)
-    })
-
-    let paginas = document.createElement("ul")
-
-    list.appendChild(paginas)
+    })    
 })
