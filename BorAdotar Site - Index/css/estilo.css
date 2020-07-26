@@ -18,9 +18,9 @@ body {
     display: block;
     clear: both;
 }
-
-
-
+.header-container{
+    transition: all 1s ease;
+}
 .header-content {
     display: block;
     margin: 0;
@@ -63,11 +63,6 @@ body {
     background-color: white;
     color: #8c2e73;
 }
-
-.buscapet {
-    display: none;
-}
-
 .main-content {
     background-color: white;
     border-bottom: 2px solid white;
@@ -447,60 +442,11 @@ body {
         height: 30em;
         border-bottom: 2px solid white;
     }
-    .buscapet {
-        background-color: #8c2e73;
-        width: 40%;
-        height: 55%;
-        margin-left: 1.875em;
-        display: block;
-        margin-top: 1em;
-        border: white 2px solid;
-        border-radius: 1em;
+    .header-content-title{
+        font-size: 2.2em;
     }
-    .buscapet h2 {
-        color: white;
-        font-weight: bold;
-        text-align: center;
-        margin: 0;
-        padding: .5em;
-    }
-    .buscapet label {
-        display: block;
-        margin-top: .3em;
-        box-sizing: border-box;
-        border: none;
-        color: white;
-        margin: 0.2em 0;
-        font-weight: bold;
-    }
-    .buscapet select,
-    .buscapet input {
-        padding: .3em;
-        width: 80%;
-        border: none;
-        border-radius: 0.625em;
-        color: #444;
-    }
-    .buscapet select {
-        cursor: pointer;
-    }
-    .coluna1 {
-        width: 48%;
-        float: left;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .coluna2 {
-        width: 48%;
-        float: left;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .buscapet .search {
-        width: 98%;
-        margin: 2% 1% 0;
+    .header-content p{
+        font-size: 1.8em;
     }
    .callSup{
        background-image: url(../Imagens/2.jpg);
@@ -512,4 +458,5 @@ body {
        transform: translateX(50%);
        bottom: 50%;
    }
+   
 }
