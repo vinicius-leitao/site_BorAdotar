@@ -59,6 +59,11 @@ class NonAuthUser{
         })
     }
 
+    static login(req, res){
+        res.sendFile(path.resolve(__dirname, "../static/views/login/login.html"))
+
+    }
+
     static error(req, res){
         res.sendFile(path.resolve(__dirname, "../static/views/erro/erro.html"))
     }
