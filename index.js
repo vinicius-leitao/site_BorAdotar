@@ -4,8 +4,9 @@ const bodyparser = require("body-parser") //requisições podem ser pegas direta
 const session = require("express-session") //sessões e criação de requisições com sessions
 const flash = require("express-flash") //responses que só duram uma request 
 
-//inicialização do express
 const app = express()
+
+
 
 //importação das rotas
 const routes = require("./routes/rotas")
@@ -20,12 +21,6 @@ app.use(session({ //configurações do express session
 }))
 app.use(flash()) //usando o express-flash como middleware
 
-//configuração multer - salvar imagens
-//const upload = multer(dest: )
-
-//talvez seja necessário usar flash
-
-//configurações do express para a renderização
 
 
 //inicialização do "servidor" na porta 8000
