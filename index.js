@@ -1,22 +1,24 @@
 //modulos importados
-const express = require("express")
+const express = require("express") //módulo de rotas 
+const bodyparser = require("body-parser") //requisições podem ser pegas diretamente do body do html
+const session = require("express-session") //sessões e criação de requisições com sessions
+const flash = require("express-flash") //responses que só duram uma request 
+
+//inicialização do express
 const app = express()
-const bodyparser = require("body-parser")
-const path = require("path")
-const multer = require("multer")
 
-//classes importadas
-const newUserController = require("./controllers/newUserController")
-const newPetController = require("./controllers/newPetController")
-const nonAuthUser = require("./controllers/noAuthUserController")
-
-
-//tabela pet não foi criada ???
-const Pet = require("./database/Pet")
+//importação das rotas
+const routes = require("./routes/rotas")
+app.use("/", routes)
 
 //configuração body-parser - ajuda a pegar parametros na requisição
-app.use(bodyparser.urlencoded({extended: false}))
-app.use(bodyparser.json())
+app.use(session({ //configurações do express session
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {secure: true}
+}))
+app.use(flash()) //usando o express-flash como middleware
 
 //configuração multer - salvar imagens
 //const upload = multer(dest: )
@@ -24,37 +26,9 @@ app.use(bodyparser.json())
 //talvez seja necessário usar flash
 
 //configurações do express para a renderização
-app.use(express.static("public"))
 
-//rotas
-app.get("/", nonAuthUser.homePage)
 
-app.get("/login", (req, res) => {
-    res.sendFile()
-})
-
-app.get("/cadastro", nonAuthUser.cadastro)
-
-app.get("/suporte", nonAuthUser.suporte)
-
-//acertar pra não selecionar cidade, porte ou raça no form
-
-app.get("/catalogo/:pagina?", nonAuthUser.catalogo)
-
-app.get("/error", (req, res) => {
-    res.sendFile(path.resolve(__dirname,"public/erro/erro.html"))
-})
-
-app.get("/teste", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "public/teste/teste.html"))
-})
-
-//mudar a rota assim que conseguir o html do vinicius
-app.post("/teste", newPetController.create)
-
-//terminar else quando ler a documentação do flash
-app.post("/cadastro", newUserController.create)
-
-app.listen(8000, () => {
+//inicialização do "servidor" na porta 8000
+app.listen(8000, () => { 
     console.log("server running")
 })
