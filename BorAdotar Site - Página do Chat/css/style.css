@@ -107,6 +107,10 @@ h2{
     border: none;
     color: white;
 }
+#chat-area{
+    grid-row: input;
+    grid-column: 2/-1;
+}
 .voltar{
     grid-row: voltar;
     grid-column: 1/2;
