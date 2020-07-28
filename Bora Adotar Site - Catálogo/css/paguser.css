@@ -60,15 +60,16 @@ body{
 }
 
 .user-bar{
+
     position: relative;
     margin: 180px 0 110px;
     width: 90%;
     padding: 5%;
-    height: 600px;
     background-color: #fff;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .name-profile h2{
@@ -93,8 +94,8 @@ body{
 }
 
 .list-pets{
-    width:85%;
-    margin: 20px 5% 0;
+    width:90%;
+    margin: 20px 2.5% 0;
     overflow-y: scroll;
     height: 300px;
     padding: 2.5%;
@@ -168,7 +169,7 @@ body{
     border: 1px solid #b1adaf;
 }
 
-.suporte{
+.suporte-bar{
     cursor: pointer;
     padding: 20px;
     border: 1px solid #e4e0e2;
@@ -176,13 +177,13 @@ body{
     transition: border 0.3s;
 }
 
-.suporte a{
+.suporte-bar a{
     font-size: 3.0em;
     text-decoration: none;
     color: #000;
 }
 
-.suporte:hover{
+.suporte-bar:hover{
     border: 1px solid #b1adaf;
 }
 
@@ -210,14 +211,55 @@ body{
 .logout i{
     color: #fff;
 }
-footer{
-    height: 200px;
-    background-color: #8C2E73;
-    text-align: center;
+
+
+
+@media screen and (max-width: 480px){
+    html, body {
+        overflow-x: hidden;
+    }
+    body {
+        position: relative
+    }
+    .container{
+        max-width: 100%;
+    }
+    .user-bar{
+        width: 80%;
+        padding: 5%;
+        margin: 50px 5%;
+        position: relative;
+        
+    }
+
+    .pet-ads{
+        width: 100%;
+    }
+    .list-pets{
+        width: 80%;
+        margin: 5%;
+        padding: 5%;
+    }
+
+    .message-chat{
+        width: 90%;
+        margin: 50px 0 20px ;
+        padding: 5%;
+    }
+
+    .pet-ads a {
+        font-size: 1.4em;
+    }
+
+  
+
+    .logout {
+        margin-top: 130px;
+    }
 }
 
-footer h2{
-    line-height: 200px;
-    font-size: 1.5em;
-    color: #fff;
+@media screen and(max-width: 375px){
+    .container{
+        max-width: 375px;
+    }
 }

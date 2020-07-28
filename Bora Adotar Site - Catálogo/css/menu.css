@@ -3,7 +3,10 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 .header-container{
+    position: relative;
     background-color: #8c2e73;
+    font-size: 16px;
+    z-index: 2;
 }
 .header-bar {
     transition: all 1s ease;
@@ -16,7 +19,7 @@ body{
     float: right;
     display: block;
     margin-right: .5em;
-    line-height: 4em;
+    margin-top: 16px;
     max-width: 100%;
     max-height: 100%;
 }
