@@ -40,7 +40,7 @@ body {
 }
 .form {
   display: grid;
-  grid-template-rows: [nomeL-start] 0.5fr [nomeL-end nome-start] 1fr [nome-end especieL-start] 0.5fr [especieL-end especie-start] 1fr [especie-end porteL-start] 0.5fr [porteL-end porte-start] 1fr [porte-end idadeL-start] 0.5fr [idadeL-end idade-start] 1fr [idade-end localizacaoL-start] 0.5fr [localizacaoL-end localL-start] 1fr [localL-end inputCep-start] 1fr[inputCep-end imgL-start] 0.5fr [imgL-end img-start] 1fr [img-end uploadedImg-start] 3.5fr [uploadedImg-end historiaL-start] 0.5fr [historiaL-end textarea-start] 3.5fr [textarea-end submit-start] 0.5fr [submit-end];
+  grid-template-rows: [nomeL-start] 0.5fr [nomeL-end nome-start] 1fr [nome-end especieL-start] 0.5fr [especieL-end especie-start] 1fr [especie-end porteL-start] 0.5fr [porteL-end porte-start] 1fr [porte-end idadeL-start] 0.5fr [idadeL-end idade-start] 1fr [idade-end sexoL-start] 0.5fr [sexoL-end sexo-start] 1fr [sexo-end localizacaoL-start] 0.5fr [localizacaoL-end localL-start] 1fr [localL-end inputCep-start] 1fr[inputCep-end imgL-start] 0.5fr [imgL-end img-start] 1fr [img-end uploadedImg-start] 3.5fr [uploadedImg-end historiaL-start] 0.5fr [historiaL-end textarea-start] 3.5fr [textarea-end submit-start] 0.5fr [submit-end];
   grid-template-columns: 100%;
   justify-content: center;
   grid-row-gap: 0.5em;
@@ -145,6 +145,12 @@ body {
 .idade {
   grid-row: idade;
   grid-column: 1;
+}
+.sexoL{
+  grid-row: sexoL;
+}
+.sexoPet{
+  grid-row: sexo;
 }
 .localizacaoL{
   grid-row: localizacaoL;
@@ -276,7 +282,7 @@ body {
     width: 80%;
   }
   .form {
-    grid-template-rows: [label1-start] 1fr [label1-end input1-start] 1fr [input1-end label2-start] 1fr [label2-end input2-start] 1fr [input2-end label3-start] 1fr [label3-end input3-start] 1fr [input3-end label4-start] 1fr [label4-end inputImg-start] 1fr[inputImg-end input4-start] 4fr [input4-end label5-start] 1fr [label5-end textarea-start] 3.5fr [textarea-end submit-start] 1fr [submit-end];
+    grid-template-rows: [label1-start] 1fr [label1-end input1-start] 1fr [input1-end label2-start] 1fr [label2-end input2-start] 1fr [input2-end porteL-start] 0.5fr [porteL-end porte-start] 1fr[porte-end label3-start] 1fr [label3-end input3-start] 1fr [input3-end label4-start] 1fr [label4-end inputImg-start] 1fr[inputImg-end input4-start] 4fr [input4-end label5-start] 1fr [label5-end textarea-start] 3.5fr [textarea-end submit-start] 1fr [submit-end];
     grid-template-columns: [coluna1-start] 50% [coluna1-end coluna2-start] 50% [coluna2-end];
     grid-gap: 1em;
   }
@@ -296,13 +302,23 @@ body {
     grid-row: input1;
     grid-column: coluna2;
   }
-  .porteL {
+  .sexoL{
     grid-row: label2;
     grid-column: coluna1;
   }
-  .porte {
+  .sexoPet{
     grid-row: input2;
     grid-column: coluna1;
+  }
+  .porteL {
+    grid-row: porteL;
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+  .porte {
+   grid-row: porte;
+   grid-column: 1/-1;
+   justify-self: center;
   }
   .idadeL {
     grid-row: label2;
