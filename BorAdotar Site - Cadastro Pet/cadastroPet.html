@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../BorAdotar Site - Cadastro Pet/css/normalize.css">
         <link rel="stylesheet" href="../BorAdotar Site - Cadastro Pet/css/menu.css">
         <link rel="stylesheet" href="../BorAdotar Site - Cadastro Pet/css/footer.css">
-        <link rel="stylesheet" href="../BorAdotar Site - Cadastro Pet/Fontes/style.css">
+        <link rel="stylesheet" href="../BorAdotar Site - Cadastro Pet//Fontes/style.css">
         <link rel="stylesheet" href="../BorAdotar Site - Cadastro Pet/css/estilo.css">
     </head>
     <body>
@@ -34,23 +34,23 @@
         </header>
         <main class="main-container">
             <h1 class="main-title" tabindex="0">Cadastre um animalzinho</h1>
-            <p class="p-before"><span tabindex="0">Patinha de cachorro, campos antecedidos por esse ícone são obrigatórios.</span>Campos com este ícone são obrigatórios.</p>
+            <p class="p-before"><span class="span-tab" tabindex="0">Patinha de cachorro, campos antecedidos por esse ícone são obrigatórios.</span>Campos com este ícone são obrigatórios.</p>
             <form class="form" action="#" method="POST">
-                <label  class="icon-before nomeL" for="nome"><span tabindex="0">Nome do bichinho:</span>Nome:</label>
+                <label  class="icon-before nomeL" for="nome"><span class="span-tab" tabindex="0">Nome do bichinho:</span>Nome:</label>
                 <input class="nome" type="text" name="nome">
-                <label class="icon-before especieL" for="especie"><span tabindex="0">Patinha de cachorro, Especie:</span>Espécie:</label>
+                <label class="icon-before especieL" for="especie"><span class="span-tab" tabindex="0">Patinha de cachorro, Especie:</span>Espécie:</label>
                 <select class="especie" name="especie" required>
                     <option value="default" selected>Selecione</option>
                     <option value="cachorro">Cachorro</option>
                     <option value="gato">Gato</option>
                 </select>
-                <label class="icon-before porteL" for="porte"><span tabindex="0">Patinha de cachorro, Porte do animal:</span>Porte:</label>
+                <label class="icon-before porteL" for="porte"><span class="span-tab" tabindex="0">Patinha de cachorro, Porte do animal:</span>Porte:</label>
                 <div class="checks porte" name="porte">
-                <label class="iconeTam peq" id="pequeno"><input  class="rdo" type="radio" name="porte"><span tabindex="0">Marcar animal com tamanho pequeno</span>P</label>
-                <label class="iconeTam med" id="medio"  ><input class="rdo" type="radio" name="porte"><span tabindex="0">Marcar animal com tamanho médio</span>M</label>
-                <label class="iconeTam gra" id="grande"><input   class="rdo" type="radio" name="porte"><span tabindex="0">Marcar animal com tamanho grande</span>G</label>
+                    <label class="iconeTam peq" id="pequeno"><input  class="rdo" type="radio" name="porte"><span class="span-tab" tabindex="0">Marcar animal com tamanho pequeno</span>P</label>
+                    <label class="iconeTam med" id="medio"  ><input class="rdo" type="radio" name="porte"><span class="span-tab" tabindex="0">Marcar animal com tamanho médio</span>M</label>
+                    <label class="iconeTam gra" id="grande"><input   class="rdo" type="radio" name="porte"><span class="span-tab" tabindex="0">Marcar animal com tamanho grande</span>G</label>
                 </div>
-                <label class="icon-before idadeL" for="idade"><span tabindex="0">Patinha de cachorro, Idade do animal:</span>Idade</label>
+                <label class="icon-before idadeL" for="idade"><span class="span-tab" tabindex="0">Patinha de cachorro, Idade do animal:</span>Idade</label>
                 <select class="idadePet idade" name="idade" required>
                 </select>
                 <label for="sexo" class="icon-before sexoL">Sexo:</label>
@@ -60,16 +60,22 @@
                     <option value="macho">Macho</option>
                     <option value="femea">Fêmea</option>
                 </select>
-                <label for=localização class="localizacaoL icon-before"><span tabindex="0">Patinha de cachorro, Localização do animal:</span>Localização</label>
+                <label for=localização class="localizacaoL icon-before"><span class="span-tab" tabindex="0">Patinha de cachorro, Localização do animal:</span>Localização</label>
                 <label for="local" class="localL"><input type="checkbox" id="local" name="local" checked><div class="chk"></div>Usar a sua localização atual.</label>
                 <div class="cepDiv">
                 <label for="cep" class="cepL icon-before">CEP</label>
                 <input type="tel" name="cep" class="inputCep" minlength="9" maxlength="9">
                 </div>
-                <label class="icon-before imgL" for="img"><span tabindex="0">Patinha de cachorro, selecione fotos do bichinho:</span>Foto do bichinho</label>
-                <input name="img" type="file" class="inputImg img" accept=".jpg,.jpeg,.png" multiple required>
-                <img class="uploadedImg" src="#" alt="">
-                <label class="historiaL" for="historiaPet"><span tabindex="0">Conte um pouco sobre esse bichinho:</span>Conte um pouco sobre esse bichinho</label>
+                <label class="icon-before imgL"><span class="span-tab" tabindex="0">Patinha de cachorro, selecione fotos do bichinho:</span>Foto do bichinho</label>
+                <div class="preview-container">
+                    <label class="preview-input" for="img">
+                        <input name="img" id="img" type="file" class="inputImg img" accept=".jpg,.jpeg,.png" multiple required>
+                        <span class="icon-camera"></span>
+                        <span class="preview-span">Foto aqui</span>
+                        <span class="preview-span">Apenas JPG e PNG.</span>
+                    </label>
+                </div>
+                <label class="historiaL" for="historiaPet"><span class="span-tab" tabindex="0">Conte um pouco sobre esse bichinho:</span>Conte um pouco sobre esse bichinho</label>
                 <textarea class="textarea" name="historiaPet" placeholder="Fique a vontade para contar a história dele(a)"></textarea>
                 <input class="submit" type="submit">
             </form>

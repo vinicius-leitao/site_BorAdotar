@@ -1,20 +1,22 @@
-
 (function(){
-    var input = document.querySelector(".inputImg");
-    input.value = null;
-    input.addEventListener("change", previewImg);
-function previewImg(){
-    var imagem = document.querySelector("input[name=img]").files[0];
-    var preview = document.querySelector(".uploadedImg");
-    var reader = new FileReader();
-    preview.alt = "Foto enviada pode conter animais de estimação em processo de cadastro para adoção.";
-    reader.addEventListener("load", function(){
-        preview.src = reader.result;
-    })
-    if(imagem){
-        reader.readAsDataURL(imagem);
-    }else{
-        preview.src = "";
+    var inputPreview = document.querySelector(".inputImg");
+    inputPreview.addEventListener("change", previewFiles);
+    function previewFiles(){
+    var container = document.querySelector(".preview-container");
+    var files = inputPreview.files;
+    function readAndPreview(file){
+        var reader = new FileReader();
+        reader.addEventListener("load", function(){
+            var image = new Image();
+            image.classList.add("uploadedImg");
+            image.alt = "Foto deve conter animais de estimação em processo de adoção";
+            image.src = this.result;
+            container.appendChild(image);
+        }, false);
+        reader.readAsDataURL(file);
     }
-}
+    if(files){
+        [].forEach.call(files, readAndPreview);
+    }
+    }
 })()
