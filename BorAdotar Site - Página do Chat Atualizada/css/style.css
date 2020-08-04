@@ -24,6 +24,7 @@ h2{
     margin-bottom: 21em;
 }
 .escondeNav{
+    position: relative;
     transition: all .5s ease;
     transform: translateX(-150%);
     z-index: 4 !important;
@@ -55,10 +56,12 @@ h2{
     display: grid;
     grid-template-columns: minmax(200px, 1fr);
     grid-template-rows:[voltar-start] 5% [voltar-end chatArea-start] 90% [chatArea-end input-start] 5% [input-end];
-    z-index: 5;
+    z-index: 10;
+    position: relative;
     
 }
 .chat-nav{
+    position: relative;
     grid-row: 1/-1;
     grid-column: 1/-1;
     overflow-y: scroll;
@@ -142,6 +145,7 @@ body{
     border-right: 2px solid #777;
     height: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
     
 }
 ::-webkit-scrollbar-track {
@@ -160,6 +164,7 @@ body{
     border-right: 2px solid #777;
     font-size: 12px;
     display: inline-block;
+    width: 100%;
 }
 .users img{
     border-radius: 50%;
@@ -171,7 +176,6 @@ body{
 .users p{
     font-size: 12px;
     color: #555;
-    
 }
 .chat-area{
     grid-column: 2/-1 !important;
