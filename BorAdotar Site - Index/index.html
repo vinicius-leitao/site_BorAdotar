@@ -8,13 +8,18 @@
     <meta name="description" content="Página principal do nosso case">
     <meta name="keywords" content="adoção, animais, pet, gatos, cachorros, lar">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../BorAdotar Site - Index/Imagens/collar-verde.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../BorAdotar Site - Index/fontes/style.css">
     <link rel="stylesheet" href="../BorAdotar Site - Index/css/normalize.css">
     <link rel="stylesheet" href="../BorAdotar Site - Index/css/estilo.css">
     <link rel="stylesheet" href="../BorAdotar Site - Index/css/menu.css">
-    <link rel="stylesheet" href="../BorAdotar Site - Index/css/footer.css">
-
+    <link rel="stylesheet" href="../BorAdotar Site - Index/css/footer.min.css">
+    <link rel="stylesheet" href="../BorAdotar Site - Index/slick/slick.css">
+    <link rel="stylesheet" href="../BorAdotar Site - Index/slick/slick-theme.css">
+    <script type="text/javascript" src="../BorAdotar Site - Index/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../BorAdotar Site - Index/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../BorAdotar Site - Index/slick/slick.js"></script>
 </head>
 
 <body>
@@ -40,139 +45,153 @@
         </div>
     </header>
     <main class="main-container">
-        <section class="main-content clearfix-before clearfix row">
+        <section class="main-content clearfix-before clearfix">
             <h2>Um pouco sobre nós...</h2>
-            <div class="col-1-1">
-                <article class="main-content-article clearfix-before">
+
+               <article class="main-content-article about">
                     <h3>Quem nós somos?</h3>
                     <img src="Imagens/idea.svg" alt="descrição">
                     <p>Somos um grupo de jovens universitários, atualmente em processo trainee para o Ramo Estudantil
                         IEEE/ CEFET-RJ.</p>
                 </article>
-                <article class="main-content-article clearfix-before">
+                <article class="main-content-article objetivos">
                     <h3>Objetivos:</h3>
-                    <img src="Imagens/project.svg" alt="descrição">
+                    <img src="Imagens/friends.svg" alt="descrição">
                     <p>Impulsionar o alcance de divulgação de animais de rua precisando de cuidados e de um lar, além de
                         facilitar processo de adoção.</p>
                 </article>
-            </div>
-            <div class="col-2-2">
-                <article class="main-content-article clearfix-before">
+                <article class="main-content-article como">
                     <h3>De que forma?</h3>
                     <img src="Imagens/meeting.svg" alt="descrição">
                     <p>Interagindo pessoas de forma fácil, prática e rápida através das ferramentas disponíveis em nosso
                         site.</p>
                 </article>
-                <article class="main-content-article clearfix-before">
+                <article class="main-content-article motivo">
                     <h3>Para que?</h3>
                     <img src="Imagens/pet.svg" alt="descrição">
                     <p>Para salvar vidas. Nos ajude a reduzir o número de animais abandonados, adote um bichinho!</p>
                 </article>
-            </div>
         </section>
         <section class="preview clearfix-before clearfix">
             <h2>Olha quem está esperando um lar:</h2>
-            <div class="cards">
-                <a href="#"><img src="../BorAdotar Site - Index/Imagens/dx1iuuaqbabw2a4n5jd5znql6.jpg" alt="descricao"></a>
-                <div class="cards-info">
-                    <div class="info-name">
-                        <a href="#">
-                            Godofredo
+            <div class="slide">
+                    <article class="cards">
+                        <a href="#"><img src="../BorAdotar Site - Index/Imagens/dx1iuuaqbabw2a4n5jd5znql6.jpg"
+                                alt="descricao"></a>
+                        <div class="cards-info">
+                            <div class="info-name">
+                                <a href="#">
+                                    Godofredo
+                                </a>
+                                <a href="#"><span class="icon-mars"></span></a>
+                            </div>
+                            <a href="#" class="link-regiao">
+                                Rio de Janeiro/RJ
+                            </a>
+                        </div>
+                        <p class="clearfix-before historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Cum,
+                            mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea
+                            voluptatibus
+                            ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
+                    </article>
+
+                    <article class="cards">
+                        <a href="#"><img src="../BorAdotar Site - Index/Imagens/hGdzxQqQ_400x400.jpg"
+                                alt="descricao"></a>
+                        <div class="cards-info">
+                            <div class="info-name">
+                                <a href="#">
+                                    Melissa
+                                </a>
+                                <a href="#"><span class="icon-venus"></span></a>
+                            </div>
+                            <a href="#" class="link-regiao">
+                                Rio de Janeiro/RJ
+                            </a>
+                        </div>
+                        <p class="clearfix-before historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Cum,
+                            mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea
+                            voluptatibus
+                            ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
+                    </article>
+
+                    <article class="cards">
+                        <a href="#"><img src="../BorAdotar Site - Index/Imagens/dx1iuuaqbabw2a4n5jd5znql6.jpg"
+                                alt="descricao"></a>
+                        <div class="cards-info">
+                            <div class="info-name">
+                                <a href="#">
+                                    Godofredo
+                                </a>
+                                <a href="#"><span class="icon-mars"></span></a>
+                            </div>
+                            <a href="#" class="link-regiao">
+                                Rio de Janeiro/RJ
+                            </a>
+                        </div>
+                        <p class="clearfix-before historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Cum,
+                            mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea
+                            voluptatibus
+                            ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
+                    </article>
+                    <article class="cards">
+                    <a href="#"><img src="../BorAdotar Site - Index/Imagens/hGdzxQqQ_400x400.jpg" alt="descricao"></a>
+                    <div class="cards-info">
+                        <div class="info-name">
+                            <a href="#">
+                                Melissa
+                            </a>
+                            <a href="#"><span class="icon-venus"></span></a>
+                        </div>
+                        <a href="#" class="link-regiao">
+                            Rio de Janeiro/RJ
                         </a>
-                        <a href="#"><span class="icon-mars"></span></a>
                     </div>
-                    <a href="#" class="link-regiao">
-                        Rio de Janeiro/RJ
-                    </a>
-                </div>
-                <p class="clearfix-before historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
-                    mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea voluptatibus
-                    ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
-            </div>
-            <div class="cards">
-                <a href="#"><img src="../BorAdotar Site - Index/Imagens/hGdzxQqQ_400x400.jpg" alt="descricao"></a>
-                <div class="cards-info">
-                    <div class="info-name">
-                        <a href="#">
-                            Melissa
+                    <p class="clearfix historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
+                        mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea voluptatibus
+                        ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
+                    </article>
+                    <article class="cards">
+                    <a href="#"><img src="../BorAdotar Site - Index/Imagens/dx1iuuaqbabw2a4n5jd5znql6.jpg"
+                            alt="descricao"></a>
+                    <div class="cards-info">
+                        <div class="info-name">
+                            <a href="#">
+                                Godofredo
+                            </a>
+                            <a href="#"><span class="icon-mars"></span></a>
+                        </div>
+                        <a href="#" class="link-regiao">
+                            Rio de Janeiro/RJ
                         </a>
-                        <a href="#"><span class="icon-venus"></span></a>
                     </div>
-                    <a href="#" class="link-regiao">
-                        Rio de Janeiro/RJ
-                    </a>
-                </div>
-                <p class="clearfix-before historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
-                    mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea voluptatibus
-                    ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
-            </div>
-            <div class="cards">
-                <a href="#"><img src="../BorAdotar Site - Index/Imagens/dx1iuuaqbabw2a4n5jd5znql6.jpg" alt="descricao"></a>
-                <div class="cards-info">
-                    <div class="info-name">
-                        <a href="#">
-                            Godofredo
+                    <p class="clearfix-before historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Cum,
+                        mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea voluptatibus
+                        ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
+                    </article>
+                    <article class="cards">
+                    <a href="#"><img src="../BorAdotar Site - Index/Imagens/dx1iuuaqbabw2a4n5jd5znql6.jpg"
+                            alt="descricao"></a>
+                    <div class="cards-info">
+                        <div class="info-name">
+                            <a href="#">
+                                Godofredo
+                            </a>
+                            <a href="#"><span class="icon-mars"></span></a>
+                        </div>
+                        <a href="#" class="link-regiao">
+                            Rio de Janeiro/RJ
                         </a>
-                        <a href="#"><span class="icon-mars"></span></a>
                     </div>
-                    <a href="#" class="link-regiao">
-                        Rio de Janeiro/RJ
-                    </a>
-                </div>
-                <p class="clearfix-before historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
-                    mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea voluptatibus
-                    ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
-            </div>
-            <div class="cards">
-                <a href="#"><img src="../BorAdotar Site - Index/Imagens/hGdzxQqQ_400x400.jpg" alt="descricao"></a>
-                <div class="cards-info">
-                    <div class="info-name">
-                        <a href="#">
-                            Melissa
-                        </a>
-                        <a href="#"><span class="icon-venus"></span></a>
-                    </div>
-                    <a href="#" class="link-regiao">
-                        Rio de Janeiro/RJ
-                    </a>
-                </div>
-                <p class="clearfix historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
-                    mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea voluptatibus
-                    ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
-            </div>
-            <div class="cards">
-                <a href="#"><img src="../BorAdotar Site - Index/Imagens/dx1iuuaqbabw2a4n5jd5znql6.jpg" alt="descricao"></a>
-                <div class="cards-info">
-                    <div class="info-name">
-                        <a href="#">
-                            Godofredo
-                        </a>
-                        <a href="#"><span class="icon-mars"></span></a>
-                    </div>
-                    <a href="#" class="link-regiao">
-                        Rio de Janeiro/RJ
-                    </a>
-                </div>
-                <p class="clearfix-before historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
-                    mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea voluptatibus
-                    ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
-            </div>
-            <div class="cards">
-                <a href="#"><img src="../BorAdotar Site - Index/Imagens/dx1iuuaqbabw2a4n5jd5znql6.jpg" alt="descricao"></a>
-                <div class="cards-info">
-                    <div class="info-name">
-                        <a href="#">
-                            Godofredo
-                        </a>
-                        <a href="#"><span class="icon-mars"></span></a>
-                    </div>
-                    <a href="#" class="link-regiao">
-                        Rio de Janeiro/RJ
-                    </a>
-                </div>
-                <p class="clearfix-before historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
-                    mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea voluptatibus
-                    ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
+                    <p class="clearfix-before historia-pet">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Cum,
+                        mollitia! Odio magni, optio, officia voluptatem deserunt quo quasi reprehenderit ea voluptatibus
+                        ullam explicabo eveniet distinctio asperiores aliquid rem nobis illum.</p>
+                    </article>
             </div>
         </section>
         <section class="callSup clearfix-before">
@@ -181,39 +200,37 @@
             <a href="../BorAdotar Site - Página do Suporte/suporte.html">Visitar suporte</a>
         </section>
     </main>
-    <footer class="foot clearfix">
-        <div class="col-1 clearfix-before">
-            <img src="../BorAdotar Site - Index/Imagens/boradotar (1).png" alt="logomarca do site">
+    <footer class="footer">
+        <div class="site">
+            <img src="../BorAdotar Site - Index/Imagens/boradotar (1).png" alt="logomarca do site BorAdotar">
             <p>O BorAdotar é uma fundação sem fundos lucrativos que procura auxiliar os animais a encontrar um lar! Faça uma adoção ou ajude um amigo!</p>
         </div>
-        <div class="col-2 clearfix">
-            <h3>Serviços</h3>
-            <ul>
+        <div class="services">
+            <h3 class="services-title">Serviços</h3>
+            <ul class="ul">
                 <li><a href="#" class="links-footer">Home</a></li>
                 <li><a href="#" class="links-footer">Adote</a></li>
-                <li><a href="../BorAdotar Site - Página do Suporte/suporte.html" class="links-footer">Suporte</a></li>
+                <li><a href="#" class="links-footer">Suporte</a></li>
                 <li><a href="#" class="links-footer">Entrar</a></li>
             </ul>
         </div>
-        <div class="col-3 clearfix">
-            <h3>Siga-nos nas redes sociais</h3>
-            <div>
+        <div class="social">
+            <h3 class="social-title">Siga-nos nas redes sociais</h3>
+            <div class="social-medias">
                 <a href="#"><span class="icon-twitter"></span></a>
                 <a href="#"><span class="icon-instagram"></span></a>
             </div>
         </div>
-        <div class="creditos clearfix clearfix-before">
-            <a href='https://br.freepik.com/fotos-vetores-gratis/madeira'>Madeira vetor criado por studiogstock - br.freepik.com</a>
-            <a href='https://br.freepik.com/fotos-vetores-gratis/animal'>Animal foto criado por 8photo - br.freepik.com</a>
-            <a href="https://br.freepik.com/fotos-vetores-gratis/amor">Amor foto criado por efe_madrid - br.freepik.com</a>
-            <a href='https://www.flaticon.com/free-icon/idea_3050462'> Idea free vector icons designed by Freepik</a>
-            <a href='https://www.flaticon.com/free-icon/adoption_1496923?term=adoption&page=1&position=33'> Adoption free vector icons designed by Flat Icons</a>
-            <a href='https://www.flaticon.com/free-icon/project-management_1087840'> Project Management free vector icons designed by dDara</a>
-            <a href='https://www.flaticon.com/free-icon/meeting_300321'> Meeting free vector icons designed by Freepik</a>
+        <div class="credits">
+            <a href="https://www.pexels.com/photo/blur-care-cat-close-up-569170/">Photo by Japheth Mast from Pexels</a>
+            <a href="https://www.pexels.com/photo/animal-animal-photography-animal-portrait-ball-422220/">Photo by Matthias Zomer from Pexels</a>
+            <a href="https://br.freepik.com/fotos-gratis/gatinhos-no-travesseiro_5554759.htm#page=2&query=gato&position=23">Filhotes foto criado por jcomp - br.freepik.com</a>
         </div>
     </footer>
-
+   
     <script src="../BorAdotar Site - Index/js/descerConteudoHeader.js"></script>
+    <script src="../BorAdotar Site - Index/js/carousel.js"></script>
+   
 </body>
 
-</html>?
+</html>
