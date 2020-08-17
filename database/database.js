@@ -1,5 +1,8 @@
+//modulos importados
 const Sequelize = require("sequelize")
-const connection = new Sequelize('borAdotar', 'root', 'grocR)1234', {
+require("dotenv").config()
+
+const connection = new Sequelize('borAdotar', 'root', process.env.DATABASE_CONNECTION, {
     host: 'localhost', 
     dialect: 'mysql', 
     timezone: "-03:00"

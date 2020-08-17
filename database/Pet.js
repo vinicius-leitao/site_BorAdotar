@@ -2,21 +2,24 @@ const sequelize = require("sequelize")
 const connection = require("./database")
 const User = require("./User")
 
-const Pet = connection.define('pets', {
+const Pet = connection.define("pets", {
     name: {
         type: sequelize.STRING,
         allowNull: true
     }, specie: {
         type: sequelize.STRING,
         allowNull: false
-    }, port: {
+    }, sex: {
         type: sequelize.STRING,
         allowNull: false
     }, age: {
         type: sequelize.STRING,
         allowNull: false
+    }, port: {
+        type: sequelize.STRING,
+        allowNull: false
     }, description: {
-        type: sequelize.TEXT, 
+        type: sequelize.TEXT,
         allowNull: true
     }
 })
@@ -24,8 +27,6 @@ const Pet = connection.define('pets', {
 User.hasMany(Pet)
 Pet.belongsTo(User)
 
-// Pet.sync({force: false})
-
-//adicionar o image no outro db
+// Pet.sync({force: true})
 
 module.exports = Pet

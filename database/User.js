@@ -19,10 +19,10 @@ const User = connection.define('users', {
         allowNull: false
     }, gender: {
         type: sequelize.STRING,
-        allowNull: false
+        allowNull: true
     }
 })
 
-// User.sync({force: false})
+// User.sync({force: true})
 
 module.exports = User
