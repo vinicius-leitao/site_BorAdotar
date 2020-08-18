@@ -32,22 +32,25 @@ class PetController { //cadastro de um novo pet
         }
     }
 
-    static create(req, res) {
+    static async create(req, res) {
         let token = jwt.decode(spliter(req.headers.cookie))
+        let url = req.file.location
         let {nome: name, especie: specie, porte: port, idade: age, sexo: sex, historiaPet: description} = req.body
-        Pet.create({
+        await Pet.create({
             name,
             specie,
             port,
             age,
             sex,
             description,
+            url,
             userId: token.id
         }).then(() =>
             res.redirect("/user/me")
         ).catch(err => {
             console.log(err)
         })
+        
     }
 }
 
