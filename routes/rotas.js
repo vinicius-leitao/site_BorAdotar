@@ -10,16 +10,16 @@ router.use(bodyparser.urlencoded({extended: false}))
 router.use(bodyparser.json())
 
 //middlewares importados
-const auth = require("./middleware/authenticator")
-const upload = require("./middleware/multer")
+const auth = require("./middleware/authenticator") //token que autentica o usuário
+const upload = require("./middleware/multer") //cuida do upload de imagens
 
 //classes importadas - preferência no caso de um possível reaproveitamento de código, além de tirar toda a lógica da index 
-const UserController = require("../controllers/userController")
-const PetController = require("../controllers/petController")
-const PublicController = require("../controllers/PublicController")
+const UserController = require("../controllers/userController") //importa as rotas relacionadas aos usuários autenticados
+const PetController = require("../controllers/petController") //importa as rotas relacionadas aos pets
+const PublicController = require("../controllers/PublicController") //importa rotas relacionadas aos usuários não autenticados
 
 //configuração dos arquivos estáticos
-router.use(express.static("static"))
+router.use(express.static("views"))
 
 //rotas
 router.get("/", PublicController.homePage) //rota da página príncipal do site 
@@ -34,7 +34,7 @@ router.get("/user/chat",auth, UserController.userChat) //página do chat
 router.get("/pet", auth, PetController.pet) //pagina do pet
 router.get("/logout", UserController.logout) //rotas de logout
 
-router.post("/pet", upload.single("img"), PetController.create) //cadastra um novo pet    
+router.post("/pet", upload.array("img", 5), PetController.create) //cadastra um novo pet    
 router.post("/cadastro", UserController.create) //cadastra um novo usuário
 router.post("/login", UserController.Userlogin) //confere os dados de login
 

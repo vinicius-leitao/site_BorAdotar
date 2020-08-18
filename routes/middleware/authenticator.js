@@ -7,9 +7,8 @@ const jwt = require("jsonwebtoken")
 const spliter = require("./scripts/tokenSplt")
 
 function auth(req, res, next){
-     //pega o token que é passado pelo headers
-    const authToken = spliter(req.headers.cookie)
-    if(authToken != undefined){
+    if(req.headers.cookie != undefined){
+        const authToken = spliter(req.headers.cookie) //pega o token que é passado pelo headers
         jwt.verify(authToken, process.env.JWT_AUTHENTICATION, (err, data) => { //descriptografia e tratamento da função assincrona
             if(err){
                 res
@@ -22,7 +21,6 @@ function auth(req, res, next){
         })
     } else {
         res
-            .json(authToken)
             .redirect("/login")
     }
 }

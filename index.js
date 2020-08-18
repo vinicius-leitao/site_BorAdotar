@@ -3,7 +3,7 @@ require("dotenv").config()
 
 const express = require("express") //módulo de rotas 
 const http = require("http") //protocolo 
-const socketio = require("socket.io") //web sockets -> chat
+const socketio = require("socket.io") //web socket -> chat 
 const flash = require("express-flash") //responses que só duram uma request
 
 //funções importadas
