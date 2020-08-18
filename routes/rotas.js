@@ -1,6 +1,8 @@
 //modulos importados
 const express = require("express")
 const bodyparser = require("body-parser")
+const multer = require("multer")
+const path = require("path")
 
 //inicialização e configuração dos módulos
 const router = express.Router() //inicialização do express
@@ -32,17 +34,9 @@ router.get("/user/chat",auth, UserController.userChat) //página do chat
 router.get("/pet", auth, PetController.pet) //pagina do pet
 router.get("/logout", UserController.logout) //rotas de logout
 
-router.post("/pet", PetController.create) //cadastra um novo pet    
+router.post("/pet", upload.single("img"), PetController.create) //cadastra um novo pet    
 router.post("/cadastro", UserController.create) //cadastra um novo usuário
 router.post("/login", UserController.Userlogin) //confere os dados de login
-
-
-router.get("/teste", (req, res) => {
-    res.sendfile("./static/views/teste/teste.html")
-})
-router.post("/teste", upload.single("imagem"), (req, res) => {
-    res.json({'imagem': req.file})
-})
 
 //pré sets de páginas com status code
 router.use(PublicController.error)
