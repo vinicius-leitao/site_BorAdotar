@@ -21,6 +21,9 @@ const Pet = connection.define("pets", {
     }, description: {
         type: sequelize.TEXT,
         allowNull: true
+    }, url: {
+        type: sequelize.TEXT,
+        allowNull: false
     }
 })
 
