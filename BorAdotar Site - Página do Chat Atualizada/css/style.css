@@ -88,6 +88,13 @@ h2{
     color: #555;
     overflow-x: hidden;
 }
+.user-active{
+    background-color: #8C2E73;
+    color: #fff !important;
+    font-weight: bold;
+}
+
+
 .chat-area, .input, .inputS, .voltar{
     display: none;
 }
