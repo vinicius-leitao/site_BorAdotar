@@ -18,15 +18,17 @@ const upload = multer({
     storage: multerS3({
         s3: s3,
         bucket: 'boradotar',
+        acl: "public-read",
+        contentType: multerS3.AUTO_CONTENT_TYPE,
         key: function(req, file, cb){
             let filename = Date.now() + file.originalname //nome com que o arquivo será salvo no aws
             cb(null, filename)
         }
     }),
     limits: {
-        fileSize: 2 * 1024 * 1024,
+        fileSize: 2 * 1024 * 1024, //tamanho máximo que uma foto pode ter ao ser mandada pro aws
     },
-    fileFilter: (req, file, cb) =>{
+    fileFilter: (req, file, cb) =>{ //formatos aceitos
         const allowedTypes = [
             "image/jpeg",
             "image/pjpeg",
