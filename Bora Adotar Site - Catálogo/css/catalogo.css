@@ -138,6 +138,7 @@ body{
 
 .catalogo {
     margin-top: 30px;
+    overflow: hidden;
 }
 
 .catalogo h2{
@@ -154,18 +155,18 @@ body{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    width: 21%;
+    width: 21.2%;
     margin: 20px 1%;
-    padding: 1%;
+    padding: 1em;
     background-color: #fff;
     position: relative;
     transform: scale(600px);
 }
 
 .box-pet img{
-    
     border-radius: 10px;
     width: 100%;
+    height: 100%;
 }
 .box-pet h3{
     display: inline-block;
@@ -176,6 +177,11 @@ body{
     color: #8C2E73;
     text-decoration: none;
     font-weight: bold;
+}
+.box-pet div{
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
 }
 
 .regiao-a{

@@ -3,7 +3,6 @@ axios.get(`http://localhost:3000/catalogo${search}`).then(response => {
     let catalog = JSON.parse(response.headers.catalog)
     let token = response.headers.cookie
     let list = document.getElementById("catalogo-container")
-    console.log(catalog)
 
     let cadastro = document.getElementById("cadastro")
     let login = document.getElementById("login")
@@ -20,6 +19,7 @@ axios.get(`http://localhost:3000/catalogo${search}`).then(response => {
 
     catalog.forEach(animal => {
         //criação de elementos
+        let div = document.createElement("div")
         let box = document.createElement("article")
         let img = document.createElement("img")
 
@@ -39,7 +39,7 @@ axios.get(`http://localhost:3000/catalogo${search}`).then(response => {
 
         //setagem de atributos para carregar o estilo do css e links
         box.classList.add("box-pet")
-        link.setAttribute("href", `http://localhost:3000/pet?id=${animal.id}`)
+        link.setAttribute("href", `/pet?id=${animal.id}`)
         regiao.setAttribute("class","regiao-a")
         porte.setAttribute("class", "clear")
         genero.setAttribute("class", "active-border")
@@ -47,10 +47,11 @@ axios.get(`http://localhost:3000/catalogo${search}`).then(response => {
         //configuração de que elementos ficam dentro de quais
         list.appendChild(box)
         link.appendChild(nome)
-        box.appendChild(img)
+        box.appendChild(div)
         box.appendChild(link)
         box.appendChild(regiao)
         box.appendChild(porte)
         box.appendChild(genero)
+        div.appendChild(img)
     })
 })
