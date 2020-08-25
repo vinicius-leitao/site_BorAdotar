@@ -7,7 +7,8 @@ const socketio = require("socket.io") //web socket -> chat
 const flash = require("express-flash") //responses que só duram uma request
 
 //funções importadas
-const formatMessage = require('./chat/messages')
+
+const formatMessage = require("./chat/messages")
 
 //inicialização
 const app = express()
@@ -15,21 +16,10 @@ const server = http.createServer(app)
 const io = socketio(server)
 
 //executa quando um usuário conecta
-io.on('connection', socket => {
-    console.log("New WS Connection")
-
-    socket.emit('message', formatMessage('','Bem vindo'))//emite uma mensagem só para a pessoa que se conectou
-    socket.broadcast.emit("message", "Alguém se conectou") //para todos menos a pessoa que logou
-    socket.on("disconnect", () => { 
-        io.emit("message", "Alguém saiu") //para todos os usuários em geral 
-    })
-
-    socket.join()
-
-    //pegando a mensagem para o chatMessage
-    socket.on('chatMessage', (msg) => { //assim que a pessoa mandar a mensagem ela é pega e: 
-        io.emit('message', formatMessage("user", msg)) //emite para todos
-    })
+io.on('connection', socket =>{
+        socket.on("message", message => {
+            io.emit("chat-message",  formatMessage( message.fullname, message.msg))
+        })
 })
 
 //importação das rotas

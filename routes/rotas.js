@@ -26,7 +26,7 @@ router.get("/", PublicController.homePage) //rota da página príncipal do site
 router.get("/login", PublicController.login) //rota da página de login
 router.get("/cadastro", PublicController.cadastro) //rota de cadastro
 router.get("/suporte", PublicController.suporte) //rota de suporte
-router.get("/catalogo/:page?", PublicController.catalogo) //rota do catálogo
+router.get("/catalogo", PublicController.catalogo) //rota do catálogo
 router.get("/error", PublicController.error) //rota de erro
 router.get("/user/me", auth, UserController.userMe) //rota do usuário
 router.get("/user/pet/new", auth, PetController.petForm) //passar o middleware

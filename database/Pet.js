@@ -1,6 +1,5 @@
 const sequelize = require("sequelize")
 const connection = require("./database")
-const User = require("./User")
 
 const Pet = connection.define("pets", {
     name: {
@@ -24,11 +23,14 @@ const Pet = connection.define("pets", {
     }, url: {
         type: sequelize.TEXT,
         allowNull: false
+    }, location: {
+        type: sequelize.TEXT,
+        allowNull: false
+    }, userId: {
+        type: sequelize.TEXT,
+        allowNull: false
     }
 })
-
-User.hasMany(Pet)
-Pet.belongsTo(User)
 
 // Pet.sync({force: true})
 

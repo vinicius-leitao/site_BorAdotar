@@ -17,9 +17,9 @@ const User = connection.define('users', {
     }, date: {
         type: sequelize.DATE,
         allowNull: false
-    }, gender: {
-        type: sequelize.STRING,
-        allowNull: true
+    }, location: {
+        type: sequelize.TEXT,
+        allowNull: false
     }
 })
 
