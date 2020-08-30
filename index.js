@@ -6,6 +6,7 @@ const http = require("http") //protocolo
 const socketio = require("socket.io") //web socket -> chat 
 const flash = require("express-flash") //responses que só duram uma request
 
+
 //funções importadas
 
 const formatMessage = require("./chat/messages")
@@ -17,9 +18,12 @@ const io = socketio(server)
 
 //executa quando um usuário conecta
 io.on('connection', socket =>{
-        socket.on("message", message => {
-            io.emit("chat-message",  formatMessage( message.fullname, message.msg))
-        })
+    socket.on("joinRoom", room => {
+        socket.join(room)
+    })
+    socket.on("message", message => {
+        io.emit("chat-message",  formatMessage(message.fullname, message.msg))
+    })
 })
 
 //importação das rotas
@@ -30,6 +34,6 @@ app.use("/", routes)
 app.use(flash()) //usando o express-flash como middleware
 
 //inicialização do "servidor" na porta 3000
-server.listen(3000, () => { 
+server.listen(3000, () => {
     console.log("server running")
 })
